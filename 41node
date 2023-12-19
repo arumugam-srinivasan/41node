@@ -1,0 +1,35 @@
+import React, { useState } from 'react';
+import { Button, Form, Input } from 'antd';
+import 'antd/dist/antd.css';
+
+const ForgetPassword = () => {
+ const [email, setEmail] = useState('');
+
+ const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Perform password reset logic here
+ };
+
+ return (
+    <div className="forget-password">
+      <h1>Forget Password</h1>
+      <Form onSubmit={handleSubmit}>
+        <Form.Item>
+          <Input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+          />
+        </Form.Item>
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Reset Password
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
+ );
+};
+
+export default ForgetPassword;
